@@ -1,0 +1,19 @@
+[phases.setup]
+# Install backend dependencies
+commands = [
+    "pip install -r backend/requirements.txt"
+]
+
+[phases.build]
+# Build frontend
+commands = [
+    "cd frontend",
+    "npm install",
+    "npm run build"
+]
+
+[phases.start]
+# Run the backend
+commands = [
+    "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
+]
