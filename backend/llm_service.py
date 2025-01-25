@@ -1,8 +1,6 @@
 import openai
 
-# Set your OpenAI API key
-OPENAI_API_KEY = "your_openai_api_key"
-openai.api_key = OPENAI_API_KEY
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_summary(input_text: str) -> str:
     """
